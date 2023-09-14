@@ -1,13 +1,10 @@
 function PasahitzaSartu(){
-    var pasahitza =  (prompt("Sartu pasahitza:")) 
-    Lehenengopasahitza = pasahitza;
-    var pasahitza2 =  (prompt("Sartu bigarren pasahitza:"))
-    Bigarrenpasahitza = pasahitza2;
+    var Lehenengopasahitza = prompt("Sartu pasahitza:");
+    var Bigarrenpasahitza = prompt("Sartu bigarren pasahitza:");
 
-    if(Lehenengopasahitza == Bigarrenpasahitza){
-        alert("Berdina")
+    while (Lehenengopasahitza !== Bigarrenpasahitza) {
+        alert("Pasahitzak ez datoz bat. Mesedez, saiatu berriro.");
+        Bigarrenpasahitza = prompt("Sartu bigarren pasahitza:");
     }
-    else{
-        alert("Okerrak")
-    }
+    alert("Berdina")
 }
