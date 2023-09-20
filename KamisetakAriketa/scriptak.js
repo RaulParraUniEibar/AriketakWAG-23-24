@@ -1,5 +1,5 @@
 function aldatuAtzera() {
-    var imagen = document.getElementById("1");
+    var imagen = document.getElementById("1"); //coge como objeto la camiseta 
     var imagenSrc = imagen.getAttribute("src");
 
     if (imagenSrc === "img/6.jpg") {
