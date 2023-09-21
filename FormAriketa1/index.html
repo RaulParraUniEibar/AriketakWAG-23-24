@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <style>
+        .row-container {
+            display: flex;
+        }
+
+        .form-column,
+        .image-column {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h2>DAW klasea</h2>
+    <h5>Formularioak eta Java Script</h5>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row-container">
+                    <!-- Primera columna con fondo gris -->
+                    <div class="form-column" style="background-color: rgb(214, 205, 205); border: 1px solid black;">
+                        <div>
+                            <form> <!--Primer formulario de hombre o mujer-->
+                                <label for="gender" style="display: inline-block;">Zuzentzeko era:</label>
+                                <input onclick="Cambiarfoto()" type="radio" id="jauna" name="gender" value="jauna" style="display: inline-block;">
+                                <label for="jauna" style="display: inline-block;">Jauna</label>
+                                <input onclick="Cambiarfoto()" type="radio" id="anderea" name="gender" value="anderea" style="display: inline-block;">
+                                <label for="anderea" style="display: inline-block;">Anderea</label>
+                            </form>
+                        </div>
+                        <br>
+                        <div>
+                            <form>
+                                <!-- Tercer formulario para elegir ciudad... -->
+                                <div>
+                                    <label for="izena" style="width: 100px; display: inline-block;">Izena:</label>
+                                    <input type="text" id="izena" name="izena" style="margin: 5px 10px;">
+                                </div>
+                                <div>
+                                    <label for="abizena" style="width: 100px; display: inline-block;">Abizena:</label>
+                                    <input type="text" id="abizena" name="abizena" style="margin: 5px 10px;">
+                                </div>
+                                <div>
+                                    <label for="helbidea" style="width: 100px; display: inline-block;">Helbidea:</label>
+                                    <input type="text" id="helbidea" name="helbidea" style="margin: 5px 10px;">
+                                </div>
+                                <br><br>
+                            </form>
+                        </div>
+                        <br>
+                        <div>
+                            <form action="#">
+                                <label for="hiria" style="width: 100px; display: inline-block;">Hiria:</label>
+                                <select name="hiria" id="hiria">
+                                    <option value="Durango">Durango</option>
+                                    <option value="Matiena">Matiena</option>
+                                    <option value="Eibar">Eibar</option>
+                                    <option value="Ermua">Ermua</option>
+                                    <option value="Amorebieta">Amorebieta</option>
+                                </select>                   
+                            </form>
+                        </div>
+                        <br>
+                        <div>
+                            <form> <!--Cuarto formulario de Libros o Peliculas-->
+                                <label for="Gustokoena" style="display: inline-block;">Gustokoena:</label>
+                                <input type="radio" id="liburuak" name="Gustokoena" value="liburuak" style="display: inline-block;">
+                                <label for="liburuak" style="display: inline-block;">Liburuak</label>
+                                <input type="radio" id="pelikulak" name="Gustokoena" value="pelikulak" style="display: inline-block;">
+                                <label for="pelikulak" style="display: inline-block;">Pelikulak</label>
+                            </form>
+                        </div>
+                        <br>
+                        <div style="text-align: center;">
+                            <button type="submit">Enviar</button>
+                            <button type="button">Eliminar</button>
+                        </div>
+                        <br>
+                    </div>
+                    <!-- Segunda columna -->
+                    <div class="image-column">
+                        <div class="row" > <!-- Primera fila en la segunda columna -->
+                            <div class="col-md-12" style="margin-left: 15px;" >
+                                <!-- Contenido de la primera fila -->
+                                <img id="imagenGenero" src="img/caraHombre.jpg" style="background-color: rgb(214, 205, 205); border: 1px solid black;">
+                            </div>
+                        </div>
+                        <div class="row"> <!-- Segunda fila en la segunda columna -->
+                            <div class="col-md-12">
+                                <!-- Contenido de la segunda fila -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+            crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

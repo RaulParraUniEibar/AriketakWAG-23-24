@@ -57,9 +57,10 @@
     <script>
         el = document.getElementById("i1")
         el.onsubmit = function test() {
-            if (el.q.value.length > 0) {
-                var testua = el.q.value;
-                el.q.value = "site:www.uni.eus " + testua;
+            q = document.getElementById("q")
+            if (q.value.length > 0) {
+                var testua = q.value;
+                q.value = "site:www.uni.eus " + testua;
                 return true;
             } else {
                 return false;
