@@ -1,5 +1,5 @@
 
-        var irudiak = ["img/BAILANDO.gif", "img/shrekBailando.jpg", "img/emerito.jpg", "img/emerito2.jpg"];
+        var irudiak = ["img/messi1.gif", "img/messi2.jpg", "img/messi3.jpg", "img/messi4.jpg"];
         // Irudiak galerian gehitzeko funtzioa
         function irudiaGehitu() {
             var imagenes = document.querySelectorAll(".irudi");
