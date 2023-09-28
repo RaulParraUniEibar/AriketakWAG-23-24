@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Elementos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" id="saskia" placeholder="Saskira gehitzekoa...">
+    <button id="agregar">Gehitu</button>
+    <button id="erosketa">Erosketa Egin</button>
+    <div id="lista"></div>
+
+    <script>
+        $(document).ready(function () {
+            var elementos = [];
+
+            $("#agregar").click(function () {
+                var elemento = $("#saskia").val();
+                if (elemento !== "") {
+                    elementos.push(elemento);
+                    $("#lista").append("<p>&#8226; " + elemento + "</p>");
+                    $("#saskia").val("");
+                }
+            });
+
+            $("#erosketa").click(function () {               
+                $("#lista").css({
+                    "background-color": "green",
+                    "border": "2px solid black"
+                });
+                alert("zure erosketa listo dago");
+            });
+        });
+    </script>
+</body>
+</html>
