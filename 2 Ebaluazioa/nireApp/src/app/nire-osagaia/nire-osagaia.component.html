@@ -25,9 +25,13 @@
     <td>{{langilea.izena}}</td>
     <td>{{langilea.abizena}}</td>
     <td>{{langilea.generoa}}</td>
-    <td>{{langilea.soldata}}</td>
+    <td>
+        <span class="badge" [ngClass]="langilea.soldata >= 1999 ? 'badge-success' : (langilea.soldata == 1000 ? 'badge-danger' : 'badge-warning')">
+            {{langilea.soldata | currency:'EUR':'symbol':'1.0-0'}}
+        </span>
+    </td>    
     <td>{{langilea.likes}}</td>
-    <td><input type="button" value="Like" (click)="gehituLikes(langilea)" /> </td>
+    <td><input type="button" value="Like" (click)="gehituLikes(langilea)" [disabled]="langilea.likes == 10" />
     <td><input type="button" value="Kontaktatu" [disabled]="!langilea.lanean" /></td>
     
     </tr>

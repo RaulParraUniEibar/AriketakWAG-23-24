@@ -1,0 +1,14 @@
+.badge-danger {
+    background-color: red;
+    color: white;
+}
+
+.badge-warning {
+    background-color: orange;
+    color: white;
+}
+
+.badge-success {
+    background-color: blue;
+    color: white;
+}
