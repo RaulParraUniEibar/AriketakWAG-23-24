@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sushi Denda</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="image-column">
+      <div class="row">
+        <!-- Primera fila en la segunda columna -->
+        <div class="col-md-12" style="margin-left: 50px">
+          <!-- Contenido de la primera fila -->
+          <img
+            id="imagenGenero"
+            src="irudiak/goia.png"
+            style="
+              background-color: rgb(214, 205, 205);
+              border: 1px solid black;
+            "
+          />
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div
+      class="col-md-12"
+      style="
+        margin-left: 50px;
+        margin-top: 15px;
+        margin-right: 50px;
+        background-color: rgb(214, 205, 205);
+        border: 1px solid black;
+      "
+    >
+      <h3 text-align=" center">Aukeratu erosi nahi duzun sushi mota</h3>
+      <form action="#">
+        <label for="mota" style="width: 100px">Bidalketa mota aukeratu:</label>
+
+        <select name="mota" id="mota">
+          <option value="Aukeratu">Aukeratu</option>
+          <option value="Gaur">Gaur</option>
+          <option value="BesteEgunBatean">Beste egun batean</option>
+        </select>
+        <br />
+        <br />
+        <div style="text-align: center">
+          <button type="button" id="erakutsi">Sushi Erakutsi</button>
+          <button type="button" id="Erosi">Erosi</button>
+        </div>
+        <br />
+      </form>
+      <form class="form-inline" id = "formulario">
+        <div class="form-group mx-sm-3">
+          <label for="inputUser" class="sr-only">Erabiltzaile</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputUser"
+            placeholder="Erabiltzaile"
+          />
+        </div>
+        <div class="form-group mx-sm-3">
+          <label for="inputPass" class="sr-only">Pasahitza</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPass"
+            placeholder="Pasahitza"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary" id ="baieztatu">Baieztatu</button>
+      </form>
+    </div>
+
+    <br />
+
+    <script>
+        $("#formulario").hide();
+      $(document).ready(function () {
+        $("#erakutsi").click(function () {
+          if ($("#mota option:selected").html() == "Aukeratu") {
+            alert("Bidalketa mota aukeratu behar duzu");
+            $("#erakutsi").text("Sushi Erakutsi");
+          } else {
+            $("#erakutsi").text("Sushi Izkutatu");
+
+            var url = "sushi.json";
+            $.ajax({
+              type: "GET",
+              url: url,
+              success: function (data) {
+                $("#izena").html(data.izena);
+                $("#ongietorri").css("display", "block");
+              },
+            });
+          }
+        });
+      });
+
+      
+      $(document).ready(function () {
+        $("#Erosi").click(function () {
+            $("#formulario").show(); 
+        });
+      });
+
+      $(document).ready(function () {
+        $("#baieztatu").click(function () {
+            $("#formulario").hide(); 
+        });
+      });
+
+    </script>
+  </body>
+</html>
