@@ -1,6 +1,7 @@
 <p>nire-osagaia works!</p>
 10 + 20 = {{10 + 20}}
-<div>
+
+<div class="erdian"> 
     <h2>{{ getTitle() }} </h2>
     <!--<input [(ngModel)]="langilea.izena">
     <input [(ngModel)]="langilea.abizena">
@@ -19,21 +20,33 @@
         <img src="{{langilea.irudia}}">
     </div>
 -->
-<table>
+<input type="number" step="1" min="0" max="4" [(ngModel)]="rowLimit" />
+
+<table class="center">
+
+
     <tbody>
-    <tr *ngFor="let langilea of langileak">
-    <td>{{langilea.izena}}</td>
-    <td>{{langilea.abizena}}</td>
-    <td>{{langilea.generoa}}</td>
-    <td>
-        <span class="badge" [ngClass]="langilea.soldata >= 1999 ? 'badge-success' : (langilea.soldata == 1000 ? 'badge-danger' : 'badge-warning')">
-            {{langilea.soldata | currency:'EUR':'symbol':'1.0-0'}}
-        </span>
-    </td>    
-    <td>{{langilea.likes}}</td>
-    <td><input type="button" value="Like" (click)="gehituLikes(langilea)" [disabled]="langilea.likes == 10" />
-    <td><input type="button" value="Kontaktatu" [disabled]="!langilea.lanean" /></td>
-    
-    </tr>
-    </tbody>
-    </table>
+        <tr *ngFor="let langilea of langileak | slice:0:rowLimit">
+        <td>{{langilea.izena | uppercase}}</td>
+        <td>{{langilea.abizena | uppercase}}</td>
+        <td>{{langilea.generoa | lowercase}}</td>
+        <td>
+            <span class="badge" [ngClass]="langilea.soldata >= 1999 ? 'badge-success' : (langilea.soldata == 1000 ? 'badge-danger' : 'badge-warning')">
+                {{langilea.soldata | currency:'EUR':'symbol':'1.0-0'}}
+            </span>
+        </td> 
+        <td>{{langilea.jaiotza | date: "dd/MM/yyyy"}}</td>
+        <td>{{langilea.likes}}</td>
+        <td><input type="button" value="Like" (click)="gehituLikes(langilea)" [disabled]="langilea.likes == 10" /></td>
+        <td><input type="button" value="Kontaktatu" [disabled]="!langilea.lanean" /></td>
+        </tr>
+        </tbody>
+
+</table>
+
+<button class="btn btn-info btn-sm" [disabled]="rowStart<=0" (click)="kenduRow()"><i class="fas fa-arrow-circle-left"></i></button>&nbsp;
+<button class="btn btn-info btn-sm" [disabled]="rowLimit>=langileak.length" (click)="gehituRow()"><i class="fas fa-arrow-circle-right"></i></button>
+
+<div >
+    <p [innerHTML]="myText"></p>
+</div>
