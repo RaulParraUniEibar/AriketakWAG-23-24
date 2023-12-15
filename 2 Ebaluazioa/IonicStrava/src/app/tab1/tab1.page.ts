@@ -12,7 +12,7 @@ export class Tab1Page {
   kluba = {
     id: 783189,
     name: 'uni eibar',
-    cover_photo_small: 'assets/img/kluba.jpg',
+    cover_photo_small: 'assets/img/generikoa.jpg',
     sport_type: 'running',
     private: true,
     member_count: 3,
