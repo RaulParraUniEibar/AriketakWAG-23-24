@@ -15,6 +15,9 @@
 
   <ion-grid>
     <ion-row>
+      <ion-col *ngFor="let kluba of klubak">
+        <ion-item-divider color="light">
+          <ion-row>
       <ion-col size="6">
         <h2>{{kluba.name}}</h2>
         <ion-badge color="success">{{kluba.club_type}}</ion-badge>&nbsp;&nbsp;
@@ -32,6 +35,9 @@
       <ion-col size="6">
         <ion-img [attr.src]="kluba.cover_photo_small == null ? '../../assets/img/generikoa.jpg' : kluba.cover_photo_small "></ion-img>
       </ion-col>
+    </ion-row>
+  </ion-item-divider>
+</ion-col>
     </ion-row>
     </ion-grid>
 
