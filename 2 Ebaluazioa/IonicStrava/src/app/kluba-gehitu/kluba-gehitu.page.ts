@@ -3,6 +3,7 @@ import { Kluba } from '../classes/kluba';
 import { ApiService } from '../services/api.service';
 
 import { NavController } from '@ionic/angular';
+
 @Component({
   selector: 'app-kluba-gehitu',
   templateUrl: './kluba-gehitu.page.html',
@@ -38,6 +39,7 @@ export class KlubaGehituPage implements OnInit {
       jarduerak: []
     };
   }
+
   ngOnInit() {
   }
 
