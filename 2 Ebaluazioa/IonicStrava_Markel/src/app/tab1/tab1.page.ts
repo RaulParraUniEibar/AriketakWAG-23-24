@@ -33,7 +33,22 @@ export class Tab1Page implements OnInit{
       }
      });
   }
+
+  deletekluba(id: any): void {
+    this.apiService.deleteKluba(id)
+      .then(() => {
+        console.log(`Kluba con ID ${id} eliminado correctamente.`);
+        // Puedes realizar acciones adicionales después de la eliminación si es necesario
+        // Por ejemplo, recargar la lista de klubak
+        this.apiService.getKlubak();
+      })
+      .catch(error => {
+        console.error(`Error al eliminar kluba con ID ${id}:`, error);
+        // Puedes manejar el error según tus necesidades
+      });
+  }
   
+
   ngOnInit(): void {
     this.getKlubak();
   }

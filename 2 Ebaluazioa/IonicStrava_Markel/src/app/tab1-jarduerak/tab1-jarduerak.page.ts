@@ -53,5 +53,6 @@ export class Tab1JarduerakPage implements OnInit {
   ngOnInit() {
     this.getKluba();
   }
+ 
 
 }
