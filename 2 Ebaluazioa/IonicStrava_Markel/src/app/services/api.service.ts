@@ -94,7 +94,7 @@ export class ApiService {
     }
   }
 
-  //eliminar la jarduera
+  //eliminar una jarduera
   async deleteJarduera(id: any) {
     const _ = await this.storage.executeSql('DELETE FROM jardueras WHERE id = ?', [id]);
 

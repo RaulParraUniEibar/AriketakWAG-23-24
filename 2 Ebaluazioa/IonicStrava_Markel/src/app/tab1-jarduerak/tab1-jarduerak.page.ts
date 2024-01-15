@@ -6,6 +6,7 @@ import { ApiService } from '../services/api.service';
 
 import { Kluba } from '../classes/kluba';
 
+
 @Component({
   selector: 'app-tab1-jarduerak',
   templateUrl: './tab1-jarduerak.page.html',
@@ -50,9 +51,25 @@ export class Tab1JarduerakPage implements OnInit {
         )}
     });
    }
+
   ngOnInit() {
     this.getKluba();
   }
- 
+
+  eliminarJarduera(id: any): void {
+    this.apiService.deleteJarduera(id)
+      .then(() => {
+        console.log(`Jarduera con ID ${id} eliminada correctamente.`);
+        // Puedes realizar acciones adicionales después de la eliminación si es necesario
+        // Por ejemplo, recargar la lista de klubak
+        this.apiService.getKlubak();
+
+      })
+      .catch(error => {
+        console.error(`Error al eliminar jarduera con ID ${id}:`, error);
+        // Puedes manejar el error según tus necesidades
+      });
+  }
+  
 
 }

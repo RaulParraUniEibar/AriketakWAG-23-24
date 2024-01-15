@@ -36,7 +36,11 @@
           <ion-col> {{aktibitatea.type}} </ion-col>
           <ion-col> {{aktibitatea.distance}} </ion-col>
           <ion-col> {{aktibitatea.moving_time}} </ion-col>
-     
+
+          <ion-button color="danger" (click)="eliminarJarduera(aktibitatea.id)">
+            <ion-icon name="trash-outline"></ion-icon> Jarduera Ezabatu
+          </ion-button>       
+
         </ion-row>
       </ion-grid>
       <!--<ion-button color="primary" size="small" (click)="goBack()">Bueltatu</ion-button>-->
